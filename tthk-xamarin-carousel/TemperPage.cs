@@ -9,44 +9,22 @@ namespace tthk_xamarin_carousel
 {
 	public class TemperPage : ContentPage
     {
-        private Image tempImage;
-        private Label tempTitleLabel, tempDescriptionLabel;
-        private Button tempTestButton;
-        private string tempTestUrl;
-        public TemperPage()
+        private Temperament temperament;
+        private Image temperImage;
+        private Label temperTitleLabel, temperDescriptionLabel;
+        private Button temperTestButton;
+        private string temperTestUrl;
+        public TemperPage(Temperament _temperament)
         {
-            tempImage = new Image();
-            tempTestButton.Clicked += TempTestButtonOnClicked;
+            temperament = _temperament;
+            temperImage = new Image();
+            temperTestButton.Clicked += TempTestButtonOnClicked;
             FlexLayout flexLayout = new FlexLayout();
-        }
-
-        public string TemperTitle
-        {
-            get
-            {
-                return tempTitleLabel.Text;
-            }
-            set
-            {
-                tempTitleLabel.Text = value;
-            }
-        }
-
-        public string TemperDescription
-        {
-            get
-            {
-                return tempDescriptionLabel.Text;
-            }
-            set
-            {
-                tempDescriptionLabel.Text = value;
-            }
         }
 
         private void TempTestButtonOnClicked(object sender, EventArgs e)
         {
-            Browser.OpenAsync(tempTestUrl);
+            Browser.OpenAsync(temperament.TestURL);
         }
     }
 }
