@@ -13,11 +13,8 @@ namespace tthk_xamarin_carousel
     {
         public static List<Temperament> LoadFromXml()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            string resourceName = assembly.GetManifestResourceNames()
-                .Single(str => str.EndsWith("Temperaments.xml"));
-            XDocument doc = XDocument.Load(resourceName);
-            IEnumerable<Temperament> tempers = from temperament in doc.Descendants("temperament")
+            XDocument doc = XDocument.Load("https://raw.githubusercontent.com/blinchk/tthk-xamarin-carousel/master/tthk-xamarin-carousel/Temperaments.xml");
+            IEnumerable <Temperament> tempers = from temperament in doc.Descendants("temperament")
                 select new Temperament()
                 {
                     Title = temperament.Attribute("title").Value,
