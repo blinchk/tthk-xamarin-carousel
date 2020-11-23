@@ -10,7 +10,6 @@ namespace tthk_xamarin_carousel
         private string title;
         private string description;
         private ImageSource picture;
-        private string testUrl;
 
         public string Title
         {
@@ -46,19 +45,6 @@ namespace tthk_xamarin_carousel
             {
                 picture = value;
             }
-        }
-
-        public string TestURL
-        {
-            get
-            {
-                return testUrl;
-            }
-            set
-            {
-                testUrl = value
-            }
-
         }
     }
 }
