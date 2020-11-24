@@ -26,6 +26,10 @@ namespace tthk_xamarin_carousel
             {
                 Source = temperament.Picture
             };
+            temperTestButton = new Button()
+            {
+                Text = "Пройти тест"
+            };
             temperTestButton.Clicked += TempTestButtonOnClicked;
             FlexLayout flexLayout = new FlexLayout()
             {
