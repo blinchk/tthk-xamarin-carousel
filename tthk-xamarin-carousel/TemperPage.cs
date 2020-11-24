@@ -11,13 +11,18 @@ namespace tthk_xamarin_carousel
     {
         private Temperament temperament;
         private Image temperImage;
-        private Label temperDescriptionLabel;
+        private Label temperTitleLabel, temperDescriptionLabel;
         private Button temperTestButton;
         private const string temperTestUrl = "https://testometrika.com/personality-and-temper/the-formula-of-temperament-a-belov/";
         public TemperPage(Temperament _temperament)
         {
             temperament = _temperament;
-            Title = temperament.Title;
+            temperTitleLabel = new Label()
+            {
+                Text = temperament.Title,
+                FontSize = 32,
+                HorizontalTextAlignment = TextAlignment.Center
+            };
             temperDescriptionLabel = new Label()
             {
                 Text = temperament.Description
@@ -35,7 +40,8 @@ namespace tthk_xamarin_carousel
             {
                 Direction = FlexDirection.Column,
                 JustifyContent = FlexJustify.SpaceEvenly,
-                Children = { temperImage, temperDescriptionLabel, temperTestButton } 
+                Children = { temperTitleLabel, temperImage, temperDescriptionLabel, temperTestButton },
+                Margin = 20
             };
             Content = flexLayout;
         }
