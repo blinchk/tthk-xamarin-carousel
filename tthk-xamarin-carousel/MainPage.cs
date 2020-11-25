@@ -12,7 +12,7 @@ namespace tthk_xamarin_carousel
         public MainPage()
         {
             Title = "Темпераменты";
-            List<Temperament> temperaments = TemperLoader.LoadFromXml();
+            List<Temperament> temperaments = TemperLoader.LoadStaticValues();
             foreach (var temperament in temperaments)
             {
                 var temperamentPage = new TemperPage(temperament);
