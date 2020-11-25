@@ -20,20 +20,5 @@ namespace tthk_xamarin_carousel
             "Чувствительный, неэнергичный, болезненно реагирующий на неприятности, склонный к унынию. Люди с меланхолическим темпераментом подвержены пессимизму, излишне подозрительны и ревнивы, но обладают аналитическим мышлением, творчески подходят к работе, тонко чувствуют и доводят дело до завершения."
         };
         static string[] temperamentPictures = new string[] { "fleg.jpg", "chol.jpg", "sangv.jpg", "melanch.jpg" };
-
-        public static List<Temperament> LoadFromXml()
-        {
-            List<Temperament> tempers = new List<Temperament>();
-            for (int i = 0; i < temperamentTitles.Length; i++)
-            {
-                tempers.Add(new Temperament()
-                {
-                    Title = temperamentTitles[i],
-                    Description = temperamentDescriptions[i],
-                    Picture = temperamentPictures[i]
-                });
-            }
-            return tempers.ToList();
-        }
     }
 }
